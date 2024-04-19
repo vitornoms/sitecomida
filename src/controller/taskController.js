@@ -10,7 +10,7 @@ async function storeTask(request, response){
         request.body.description
     );
 
-    const query = "INSERT INTO db_tasks(title, description) VALUES(?,?)";
+    const query = "INSERT INTO email_cupons(title, description) VALUES(?,?)";
     
     connection.query(query, params, (err, results) => {
         if(results){
@@ -26,7 +26,8 @@ async function storeTask(request, response){
             .status(400)
             .json({
                 success: false,
-                message: "Ops, deu problema!"
+                message: "Ops, deu problema!",
+                data: err
             })
         }
     })

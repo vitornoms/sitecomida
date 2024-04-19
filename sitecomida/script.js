@@ -1,11 +1,11 @@
-let vutton = document.getElementById("handleSubmit");
+let button = document.getElementById("handleSubmit");
 
-GamepadButton.onclick = async function() {
+button.onclick = async function() {
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
     let data = {title,description}
 
-    const response = await fetch('http://localhost:3003/api/store/task', {
+    const response = await fetch('http://localhost:3003/api/store/post', {
         method: "POST",
         headers: {"Content-type": "application/json:charset=UTF-8"},
         body: JSON.stringify(data)
